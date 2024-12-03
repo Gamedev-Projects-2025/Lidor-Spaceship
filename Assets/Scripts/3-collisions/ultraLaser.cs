@@ -11,11 +11,11 @@ public class UltraLaser : MonoBehaviour
 
         GameObject[] objects = Object.FindObjectsOfType<GameObject>();
 
-        if (other.gameObject.name == "PlayerSpaceship1")
+        if (other.tag == "Player")
         {
             foreach (GameObject obj in objects)
             {
-                if (obj.gameObject.name == "EnemySaucerWithCollider(Clone)")
+                if (obj.tag == "Enemy")
                 {
                     Debug.Log($"Destroying object: {obj.name}");
                     Destroy(obj);
